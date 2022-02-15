@@ -10,7 +10,7 @@
 	<h1>테스트</h1>
 		<table border = "1" id = "start">
 			<tr>
-				<td colspan = "3">
+				<td colspan = "3"> 
 					<input type = "checkbox"> 맥주
 					<input type = "checkbox"> 소주
 					<input type = "checkbox"> 보드카
