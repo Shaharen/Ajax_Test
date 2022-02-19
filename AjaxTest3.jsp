@@ -40,8 +40,6 @@
 								success : function(result){
 									// 제대로된 값이 넘어왔는지 콘솔에서 확인
 									console.log(result);
-									// 소분류 초기화
-									$("#result").empty();
 									// 넘어온 result 중에서 해당하는 값만 출력
 									for (let i = 0 ; i < result.length; i ++) {
 										// for문안에 잘 들어왔는지, 분류값은 잘 유지되는지 확인
@@ -50,7 +48,7 @@
 										// 해당 번호에 맞는 정보만 append
 										if (sort-1 == i){
 										let data = JSON.parse(result[i]);
-											$("#result").append("<tr>"
+											$("#result").append("<tr id = "+i+">"
 													+"<td><input type = 'checkbox'>"+data.taste+"</td>"
 													+"<td><input type = 'checkbox'>"+data.flavor+"</td>"
 													+"<td><input type = 'checkbox'>"+data.abv+"</td>"
@@ -64,11 +62,101 @@
 							});
 							// 분류 번호가 2번이라면
 						} else if ( sort == "2"){
-							sort = "dadasdf";
+							$.ajax({
+								url : "Test",
+								dataType : "json", // dataType 넘겨받을때의 데이터 타입 약속
+								success : function(result){
+									// 제대로된 값이 넘어왔는지 콘솔에서 확인
+									console.log(result);
+									// 넘어온 result 중에서 해당하는 값만 출력
+									for (let i = 0 ; i < result.length; i ++) {
+										// for문안에 잘 들어왔는지, 분류값은 잘 유지되는지 확인
+										console.log("for문 안")
+										console.log(sort)
+										// 해당 번호에 맞는 정보만 append
+										if (sort-1 == i){
+										let data = JSON.parse(result[i]);
+											$("#result").append("<tr id = "+i+">"
+													+"<td><input type = 'checkbox'>"+data.taste+"</td>"
+													+"<td><input type = 'checkbox'>"+data.flavor+"</td>"
+													+"<td><input type = 'checkbox'>"+data.abv+"</td>"
+													+"</tr>");
+										}
+									}
+									} ,
+								error : function(){
+									alert("실패");
+								}
+							});
+						} else if ( sort == "3") {
+							$.ajax({
+								url : "Test",
+								dataType : "json", // dataType 넘겨받을때의 데이터 타입 약속
+								success : function(result){
+									// 제대로된 값이 넘어왔는지 콘솔에서 확인
+									console.log(result);
+									// 넘어온 result 중에서 해당하는 값만 출력
+									for (let i = 0 ; i < result.length; i ++) {
+										// for문안에 잘 들어왔는지, 분류값은 잘 유지되는지 확인
+										console.log("for문 안")
+										console.log(sort)
+										// 해당 번호에 맞는 정보만 append
+										if (sort-1 == i){
+										let data = JSON.parse(result[i]);
+											$("#result").append("<tr id = "+i+">"
+													+"<td><input type = 'checkbox'>"+data.taste+"</td>"
+													+"<td><input type = 'checkbox'>"+data.flavor+"</td>"
+													+"<td><input type = 'checkbox'>"+data.abv+"</td>"
+													+"</tr>");
+										}
+									}
+									} ,
+								error : function(){
+									alert("실패");
+								}
+							});
+						} else if (sort == "4") {
+							$.ajax({
+								url : "Test",
+								dataType : "json", // dataType 넘겨받을때의 데이터 타입 약속
+								success : function(result){
+									// 제대로된 값이 넘어왔는지 콘솔에서 확인
+									console.log(result);
+									// 넘어온 result 중에서 해당하는 값만 출력
+									for (let i = 0 ; i < result.length; i ++) {
+										// for문안에 잘 들어왔는지, 분류값은 잘 유지되는지 확인
+										console.log("for문 안")
+										console.log(sort)
+										// 해당 번호에 맞는 정보만 append
+										if (sort-1 == i){
+										let data = JSON.parse(result[i]);
+											$("#result").append("<tr id = "+i+">"
+													+"<td><input type = 'checkbox'>"+data.taste+"</td>"
+													+"<td><input type = 'checkbox'>"+data.flavor+"</td>"
+													+"<td><input type = 'checkbox'>"+data.abv+"</td>"
+													+"</tr>");
+										}
+									}
+									} ,
+								error : function(){
+									alert("실패");
+								}
+							});
 						}
 					} else {
 						// 체크박스 해제시 소분류창 비우기
-						$("#result").empty();
+						sort = event.target.value;
+						console.log("해제된 체크박스 번호" , sort);
+						if ( sort == 1) {
+							$("#0").remove();							
+						} else if ( sort == 2) {
+							$("#1").remove();
+						} else if ( sort == 3) {
+							$("#2").remove();
+						} else if ( sort == 4) {
+							$("#3").remove();
+						}
+						
 					}
 					
 				}
