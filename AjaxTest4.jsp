@@ -10,7 +10,7 @@
 	<h1>테스트</h1>
 		<table border = "1" id = "start">
 			<tr>
-				<td colspan = "3">
+				<td colspan = "3"> 
 					<input type = "radio" name = "drink" value = "1" onclick = "getCheckboxValue(event)"> 맥주
 					<input type = "radio" name = "drink" value = "2" onclick = "getCheckboxValue(event)"> 소주
 					<input type = "radio" name = "drink" value = "3" onclick = "getCheckboxValue(event)"> 보드카
