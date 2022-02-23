@@ -11,7 +11,7 @@
 	<tr>
 		<td>상품명</td>
 		<td>향</td>
-		<td>맛</td>
+		<td>맛</td>  
 		<td>도수</td>
 		<td>찜하기</td>
 	</tr>
